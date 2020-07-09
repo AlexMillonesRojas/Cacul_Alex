@@ -8,6 +8,9 @@
 
 import Foundation
 class Calcu {
+    
+    
+    
     var operadores = "*"
     var variable1 = 4.0
     var variable2 = 2.0
