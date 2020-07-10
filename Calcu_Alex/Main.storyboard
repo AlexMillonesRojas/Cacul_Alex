@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dwy-zi-eRM">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dwy-zi-eRM" userLabel="portada">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" id="QWQ-yL-nmC">
@@ -36,6 +36,9 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <state key="normal" title="+"/>
+                                                        <connections>
+                                                            <action selector="operSumOnClick:" destination="ZRX-Bd-Q0G" eventType="touchUpInside" id="xf9-RW-lRR"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srD-CQ-CdP" userLabel="operIgu">
                                                         <rect key="frame" x="8" y="435" width="102" height="54"/>
@@ -61,7 +64,7 @@
                                         </subviews>
                                         <viewLayoutGuide key="safeArea" id="mWy-ql-Ld5"/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="Vyp-sj-mDx">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="Vyp-sj-mDx">
                                         <rect key="frame" x="39" y="283" width="231" height="384"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="w9k-lc-LeR">
@@ -71,6 +74,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="53" height="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <state key="normal" title="AC"/>
+                                                        <connections>
+                                                            <action selector="operAc:" destination="ZRX-Bd-Q0G" eventType="touchUpInside" id="RWG-HN-DQU"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBm-42-tw9" userLabel="operMasMenos">
                                                         <rect key="frame" x="98" y="0.0" width="56" height="60"/>
@@ -96,6 +102,9 @@
                                                         <rect key="frame" x="101" y="0.0" width="30" height="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <state key="normal" title="8"/>
+                                                        <connections>
+                                                            <action selector="numero8OnClick:" destination="ZRX-Bd-Q0G" eventType="touchUpInside" id="KJ8-FJ-mX4"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TlE-Hw-meJ">
                                                         <rect key="frame" x="201" y="0.0" width="30" height="60"/>
@@ -164,16 +173,35 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="resultado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sea-Bg-if2">
-                                        <rect key="frame" x="20" y="133" width="335" height="125"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="resultado" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Sea-Bg-if2">
+                                        <rect key="frame" x="20" y="209" width="335" height="49"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="prevResul" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="jfM-Fl-Xt4" userLabel="prevResul">
+                                        <rect key="frame" x="195" y="131" width="160" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Sea-Bg-if2" firstAttribute="top" secondItem="dwy-zi-eRM" secondAttribute="top" constant="209" id="149-x8-c6N"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vyp-sj-mDx" secondAttribute="trailing" constant="105" id="6OY-4H-QDb"/>
+                                    <constraint firstItem="Vyp-sj-mDx" firstAttribute="leading" secondItem="dwy-zi-eRM" secondAttribute="leading" constant="39" id="7EL-n7-oZR"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vyp-sj-mDx" secondAttribute="bottom" id="EKj-mL-f54"/>
+                                    <constraint firstItem="jfM-Fl-Xt4" firstAttribute="leading" secondItem="dwy-zi-eRM" secondAttribute="leading" constant="195" id="EgQ-3N-fCt"/>
+                                    <constraint firstItem="Sea-Bg-if2" firstAttribute="top" secondItem="jfM-Fl-Xt4" secondAttribute="bottom" constant="30" id="In8-1a-nIH"/>
+                                    <constraint firstAttribute="trailing" secondItem="jfM-Fl-Xt4" secondAttribute="trailing" constant="20" id="MhL-Lm-786"/>
+                                    <constraint firstItem="Vyp-sj-mDx" firstAttribute="top" secondItem="Sea-Bg-if2" secondAttribute="bottom" constant="25" id="VaR-dR-dby"/>
+                                    <constraint firstItem="Vyp-sj-mDx" firstAttribute="top" secondItem="Sea-Bg-if2" secondAttribute="bottom" constant="25" id="XMT-WF-idn"/>
+                                    <constraint firstItem="Sea-Bg-if2" firstAttribute="leading" secondItem="dwy-zi-eRM" secondAttribute="leading" constant="20" id="iSl-au-Ojd"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sea-Bg-if2" secondAttribute="trailing" constant="20" id="xFl-1n-RtO"/>
+                                    <constraint firstItem="jfM-Fl-Xt4" firstAttribute="top" secondItem="dwy-zi-eRM" secondAttribute="top" constant="131" id="zaS-WJ-Efa"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -187,7 +215,6 @@
                     </view>
                     <connections>
                         <outlet property="numero0" destination="OxI-0V-OkI" id="eEG-C1-t9A"/>
-                        <outlet property="numero1" destination="vJn-qm-Puw" id="Yhl-K6-Dzo"/>
                         <outlet property="numero2" destination="vJn-qm-Puw" id="eze-5T-RZo"/>
                         <outlet property="numero3" destination="z9t-yU-6Ed" id="6hF-aE-Yd7"/>
                         <outlet property="numero4" destination="BkM-ZW-YlH" id="0Vu-Z5-y2q"/>
@@ -203,9 +230,7 @@
                         <outlet property="operMasMenos" destination="zBm-42-tw9" id="CcI-nn-JHc"/>
                         <outlet property="operPorcien" destination="3uH-fN-gP1" id="KRc-1L-E1T"/>
                         <outlet property="operSum" destination="0XF-tc-m1d" id="5sG-7D-0Zn"/>
-                        <outlet property="operdivi" destination="3ZI-7T-SDM" id="kQH-SD-fYC"/>
-                        <outlet property="opermulti" destination="x8j-R4-E20" id="9fA-e1-rv9"/>
-                        <outlet property="operres" destination="0x8-bf-1l9" id="Dwc-cP-xqQ"/>
+                        <outlet property="portada" destination="dwy-zi-eRM" id="ANi-Wl-mKP"/>
                         <outlet property="resultado" destination="Sea-Bg-if2" id="IVA-EA-dxw"/>
                     </connections>
                 </viewController>

@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var portada: UIView!
     //resultado
     @IBOutlet weak var resultado: UILabel!
     //numeros
@@ -25,8 +26,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var numeroDecimal: UIButton!
     //operadores
     
-    @IBOutlet weak var operAc: UIButton!
+    //@IBOutlet weak var operAc: UIButton!
 
+    
+    
+    
+    @IBAction func operAc(_ sender: UIButton){
+        
+        clear()
+        
+    }
+         
     @IBOutlet weak var operMasMenos: UIButton!
     @IBOutlet weak var operPorcien: UIButton!
     @IBOutlet weak var operDivi: UIButton!
@@ -35,22 +45,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var operSum: UIButton!
     @IBOutlet weak var operIgu: UIButton!
     // Variables
-    var total: Double = 0
+    var calculo = Calcu()
     
     
+    
+    @IBAction func operSumOnClick(_ sender: Any) {
+        print("+")
+    }
+    @IBAction func numero8OnClick(_ sender: Any) {
+        print(8)
+    }
     @IBAction func numero9OnClick(_ sender: Any) {
         print(9)
-    }
-    
-    //var calculo = Calcu()
+        
+        
+        resultado.text = String(format: "%.0f", calculo.resolverCalculo())
 
-    override func viewDidLoad() {
+        func viewDidLoad() {
         super.viewDidLoad()
-      //  _ = calculo.resolverCalculo()
+        _ = calculo.resolverCalculo()
         // Do any additional setup after loading the view.
         
     }
-
-
 }
-
+}
